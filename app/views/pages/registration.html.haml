@@ -1,0 +1,18 @@
+#content.registration
+
+  %article
+    %header 
+      .time
+      %h1 Registration
+      .comments
+
+    %table
+      %tr
+        %th
+        %th Price
+      - price = 300 + rand(200)
+      - (0..3).each do |i|
+        %tr
+          %td= (@conference.start << 3 - i).strftime('%B')
+          %td= "$#{price + i * 100}"
+

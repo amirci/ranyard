@@ -1,0 +1,25 @@
+#event.IntContentBox
+  .IntContentBoxInfo
+
+    %h1 Event information
+    
+    .field
+      Starts:
+      = @event.start.strftime('%b %d %Y, %I:%M')
+    .field
+      Finish:
+      = @event.finish.strftime('%b %d %Y, %I:%M')
+    .field
+      Custom message:
+      = @event.custom
+    .field
+      Main event?
+      = @event.main
+    .field
+      Room:
+      = @event.room.name
+    .field
+      Session:
+      = @event.session.title if @event.session
+    
+    = link_to 'Back to listing', events_path

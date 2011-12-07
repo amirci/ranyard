@@ -1,0 +1,30 @@
+#schedule
+  %h1 Schedule Administration
+
+  = label_tag('Day')
+  = select_tag('day', options_for_select(@days)) if @days
+  
+
+  %table
+    %tr
+      %th Start
+      %th Finish
+      %th Custom
+      %th Main
+      %th Session
+      %th
+      %th
+      %th
+  
+    - @events.each do |e|
+      %tr
+        %td= format_start(e.start)
+        %td= format_finish(e.finish)
+        %td
+        %td
+        %td
+        %td= link_to 'Show', e
+        %td= link_to 'Edit', edit_event_path(e)
+        %td= button_to("Delete Event", { :action => "destroy", :id => e.id }, {:confirm => "Are you sure?", :method => :delete})
+  
+      

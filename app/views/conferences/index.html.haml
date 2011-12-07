@@ -1,0 +1,32 @@
+#conferences
+  %h1 Listing Conferences
+  
+  %table{ id: 'list' }
+    %tr
+      %th Name
+      %th Start
+      %th Finish
+      %th Is Active?
+      %th Subdomain
+      %th Venue
+      %th City
+      %th
+      %th
+      %th
+  
+    - @conferences.each do |conference|
+      %tr
+        %td= conference.name
+        %td= format_start(conference.start)
+        %td= format_finish(conference.finish)
+        %td= format_active(conference.active)
+        %td= conference.subdomain
+        %td= conference.venue
+        %td= conference.city
+        %td= link_to 'Show', conference
+        %td= link_to 'Edit', edit_conference_path(conference)
+        %td= button_to("Delete Conference", { :action => "destroy", :id => conference.id }, {:confirm => "Are you sure?", :method => :delete})
+  
+  %br
+  
+  = link_to 'New Conference', new_conference_path

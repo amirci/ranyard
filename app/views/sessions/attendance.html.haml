@@ -1,0 +1,18 @@
+#attendance.IntContentBox
+  .IntContentBoxInfo
+
+    %h1 Attendance report
+
+    %img.hr{:src=>image_path('pix.gif')}
+
+    %table
+      %thead
+        %th Session
+        %th Presenter(s)
+        %th Attendance
+      %tbody
+        -@sessions.each do |s|
+          %tr.session
+            %td.title= s.title
+            %td.speakers= speakers(s)
+            %td.attending= s.planning_to_attend

@@ -1,0 +1,120 @@
+// Place all the styles related to the schedule controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$background: #D8F0FC;
+
+#schedule {
+	
+	h1 {
+		margin-top:20px;
+	}
+
+	p {
+		width:700px;
+	}
+	
+	.hr {
+		margin: 0px 20px;
+		width:700px;
+	}
+	
+	header {
+		color:white;
+		text-align:center;
+		padding:5px;
+	    font-family: "Trebuchet MS", sans-serif;
+	    font-size: 20px;
+	    font-weight: bold;
+	    line-height: 1.4em;
+	    text-shadow:1px 1px 1px #568F23;
+	    border:1px solid #93CE37;
+	    border-bottom:3px solid white;
+	    background-color:#9DD929;
+	    background:-webkit-gradient(
+	        linear,
+	        left bottom,
+	        left top,
+	        color-stop(0.02, rgb(123,192,67)),
+	        color-stop(0.51, rgb(139,198,66)),
+	        color-stop(0.87, rgb(158,217,41))
+	        );
+	    background: -moz-linear-gradient(
+	        center bottom,
+	        rgb(123,192,67) 2%,
+	        rgb(139,198,66) 51%,
+	        rgb(158,217,41) 87%
+	        );
+	    -webkit-border-top-left-radius:5px;
+	    -webkit-border-top-right-radius:5px;
+	    -moz-border-radius:5px 5px 0px 0px;
+	    border-top-left-radius:5px;
+	    border-top-right-radius:5px;
+	}
+
+	table {
+		
+		margin-bottom:40px;
+	    font-family: "Trebuchet MS", sans-serif;
+	    font-size: 14px;
+	    font-weight: bold;
+	    line-height: 1.4em;
+	    font-style: normal;
+	    border-collapse:separate;
+
+		thead th {
+		    padding:15px;
+		    color:#fff;
+			width:120px;
+		    text-shadow:1px 1px 1px #568F23;
+		    border:1px solid #93CE37;
+		    border-bottom:3px solid #9ED929;
+		    background-color:#9DD929;
+		    background:-webkit-gradient(
+		        linear,
+		        left bottom,
+		        left top,
+		        color-stop(0.02, rgb(123,192,67)),
+		        color-stop(0.51, rgb(139,198,66)),
+		        color-stop(0.87, rgb(158,217,41))
+		        );
+		    background: -moz-linear-gradient(
+		        center bottom,
+		        rgb(123,192,67) 2%,
+		        rgb(139,198,66) 51%,
+		        rgb(158,217,41) 87%
+		        );
+		    -webkit-border-top-left-radius:5px;
+		    -webkit-border-top-right-radius:5px;
+		    -moz-border-radius:5px 5px 0px 0px;
+		    border-top-left-radius:5px;
+		    border-top-right-radius:5px;
+		}
+		
+		th:empty {
+		    background:transparent;
+		    border:none;
+		}
+		
+		tbody td {
+		    padding:10px;
+		    text-align:center;
+		    background-color:#DEF3CA;
+		    border: 2px solid #fff;
+		    -moz-border-radius:2px;
+		    -webkit-border-radius:2px;
+		    border-radius:2px;
+		    color:#666;
+		    text-shadow:1px 1px 1px #fff;
+			line-height:130%;
+		}
+		
+		.event {
+		}
+
+		.main_event {
+			text-align: center;
+		}
+	}
+	
+}

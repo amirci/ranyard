@@ -1,0 +1,84 @@
+/* line 10, ../../../app/assets/stylesheets/east/pages.css.scss */
+.IntContentBoxInfo {
+  margin-bottom: 6em;
+}
+
+/* line 14, ../../../app/assets/stylesheets/east/pages.css.scss */
+address {
+  margin: 1em 0 0;
+  font-style: normal;
+}
+
+/* line 19, ../../../app/assets/stylesheets/east/pages.css.scss */
+dt {
+  font-weight: bold;
+  margin: 1em 0 0;
+}
+
+/* line 24, ../../../app/assets/stylesheets/east/pages.css.scss */
+dd {
+  font-weight: normal;
+  margin: 1em 0 0;
+}
+
+/* line 29, ../../../app/assets/stylesheets/east/pages.css.scss */
+h1 {
+  margin: 0;
+}
+
+/* line 33, ../../../app/assets/stylesheets/east/pages.css.scss */
+h2 {
+  margin: 1em 0;
+}
+
+/* line 37, ../../../app/assets/stylesheets/east/pages.css.scss */
+h3 {
+  margin: 1em 0;
+}
+
+/* line 41, ../../../app/assets/stylesheets/east/pages.css.scss */
+img.hr {
+  border: 0;
+  width: 100%;
+  height: 1px;
+  margin: 1em 0;
+}
+
+/* line 48, ../../../app/assets/stylesheets/east/pages.css.scss */
+p.caption {
+  margin: 3px 0 0;
+  padding: 0;
+  font-size: 100%;
+  text-align: left;
+  font-style: italic;
+}
+
+/* line 56, ../../../app/assets/stylesheets/east/pages.css.scss */
+p {
+  margin: 1em 0 0;
+}
+
+/* line 60, ../../../app/assets/stylesheets/east/pages.css.scss */
+table.rates {
+  border: 1px solid black;
+  border-width: 1px 1px 0 0;
+}
+/* line 64, ../../../app/assets/stylesheets/east/pages.css.scss */
+table.rates th, table.rates td {
+  border: 1px solid black;
+  border-width: 0 0 1px 1px;
+  padding: 3px;
+}
+/* line 70, ../../../app/assets/stylesheets/east/pages.css.scss */
+table.rates td, table.rates th {
+  text-align: center;
+}
+/* line 74, ../../../app/assets/stylesheets/east/pages.css.scss */
+table.rates td.title {
+  text-align: left;
+}
+
+/* line 79, ../../../app/assets/stylesheets/east/pages.css.scss */
+ul {
+  margin: 1em 0;
+}

@@ -1,0 +1,102 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#events {
+	
+	header {
+		margin-bottom:0px;
+	    text-shadow:1px 1px 1px #568F23;
+	    border:1px solid #93CE37;
+		font-size:16px;
+		padding: 5px;
+		color:white;
+	    border-bottom:3px solid white;
+	    background-color:#9DD929;
+	    background:-webkit-gradient(
+	        linear,
+	        left bottom,
+	        left top,
+	        color-stop(0.02, rgb(123,192,67)),
+	        color-stop(0.51, rgb(139,198,66)),
+	        color-stop(0.87, rgb(158,217,41))
+	        );
+	    background: -moz-linear-gradient(
+	        center bottom,
+	        rgb(123,192,67) 2%,
+	        rgb(139,198,66) 51%,
+	        rgb(158,217,41) 87%
+	        );
+	    -webkit-border-top-left-radius:5px;
+	    -webkit-border-top-right-radius:5px;
+	    -moz-border-radius:5px 5px 0px 0px;
+	    border-top-left-radius:5px;
+	    border-top-right-radius:5px;	
+	}
+	
+	table {
+		
+		margin-bottom:40px;
+	    font-family: "Trebuchet MS", sans-serif;
+	    font-size: 16px;
+	    font-weight: bold;
+	    font-style: normal;
+	    border-collapse:separate;
+
+
+		
+		thead th {
+		    padding:5px;
+			padding-left:10px;
+		    color:#fff;
+		    text-shadow:1px 1px 1px #568F23;
+		    border:1px solid #93CE37;
+		    border-bottom:3px solid #9ED929;
+		    background-color:#9DD929;
+		    background:-webkit-gradient(
+		        linear,
+		        left bottom,
+		        left top,
+		        color-stop(0.02, rgb(123,192,67)),
+		        color-stop(0.51, rgb(139,198,66)),
+		        color-stop(0.87, rgb(158,217,41))
+		        );
+		    background: -moz-linear-gradient(
+		        center bottom,
+		        rgb(123,192,67) 2%,
+		        rgb(139,198,66) 51%,
+		        rgb(158,217,41) 87%
+		        );
+		    -webkit-border-top-left-radius:5px;
+		    -webkit-border-top-right-radius:5px;
+		    -moz-border-radius:5px 5px 0px 0px;
+		    border-top-left-radius:5px;
+		    border-top-right-radius:5px;
+		}
+
+		th:empty {
+		    background:transparent;
+		    border:none;
+		}
+
+		tbody td {
+			font-size:12px;
+		    padding:0px;
+		    text-align:center;
+		    background-color:#DEF3CA;
+		    border: 2px solid #fff;
+		    -moz-border-radius:2px;
+		    -webkit-border-radius:2px;
+		    border-radius:2px;
+		    color:#666;
+		    text-shadow:1px 1px 1px #fff;
+		}
+	}
+
+}
+
+
+#event {
+	
+
+}

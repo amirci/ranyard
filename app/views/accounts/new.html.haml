@@ -1,0 +1,27 @@
+.IntContentBox
+  .IntContentBoxInfo
+
+    %h1 Log in
+      
+    -if flash[:alert]
+      #error_explanation
+        %h2 Error trying to log in
+        %ul
+          %li= flash[:alert]
+    
+    = form_tag accounts_path do        
+      %fieldset
+        .clearfix
+          = label_tag :email
+          .input
+            .inline-inputs
+              = text_field_tag :email, params[:email], :class => 'xlarge' 
+
+        .clearfix
+          = label_tag :password
+          .input
+            .inline-inputs
+              = password_field_tag :password, :class => 'xlarge'
+      
+        .actions
+          = submit_tag "Log in", :class => 'btn primary' 

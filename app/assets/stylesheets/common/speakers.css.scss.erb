@@ -1,0 +1,213 @@
+// Place all the styles related to the Speakers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.speakers {
+  // Add the speakers class to your body tag
+  // Then, place scoped styles here.
+}
+
+#speakers {
+
+	img {
+		border:0 none white;
+	}
+
+	img.hr {
+		height:1px;
+	}
+
+	h1,h2,h3 {
+		margin-bottom:0;
+	}
+
+	h1 {
+		margin-top: 20px;
+	}
+
+	h2,h3 {
+		margin-top: 12px;
+	}
+
+	p,li {
+    color:#000;
+		margin-top: 0.8em;
+	}
+
+	p.display_options {
+		font-size:100%;
+		
+		a.selected {
+			color:inherit;
+			text-decoration:none;
+			font-weight:bold;
+		}
+	}
+
+	ol#list {
+		padding:0;
+		margin:0;
+		float:left;
+
+		li {
+			clear:left;
+			float:left;
+			list-style-type:none;
+			margin-left:0;
+			padding:0;
+			width:auto;
+		}
+
+		ol.icons {
+			margin:0;
+			padding:0;
+		}
+
+		li {
+			h2 {
+				font-size: 175%;
+				margin-top:-2px;
+
+        em {
+          font-size:65%;
+          font-weight:normal;
+        }
+
+        span.modify {
+          float:none;
+          display:inline;
+
+          a:hover {
+            text-decoration:underline;
+          }
+
+          form,div,input,button {
+            display:inline;
+            float:none;
+          }
+        }
+			}
+		}
+	}
+}
+
+#speakers.low-detail {
+
+	ol#list {
+		li {
+      background-color: #B9DC8C;
+      border: 1px solid #87A066;
+      clear: none;
+      float: left;
+      height: 160px;
+      margin:20px 20px 0 0;
+      padding:10px;
+      text-align: center;
+      vertical-align: bottom;
+      width:194px;
+
+      h2 {
+        width:201px;
+        margin:10px 0 0;
+
+        em {
+          display:none;
+        }
+
+        span.modify {
+          display:none;
+        }
+      }
+
+			img.pic {
+				display:block;
+        margin:0 auto;
+			}
+
+			ol.icons {
+				display:none;
+			}
+
+			p {
+				display:none;
+			}
+			
+			.sessions {
+				display:none;
+			}
+		}
+	}
+}
+
+#bd .main dt {
+  margin-top:0;
+}
+
+#speakers.high-detail {
+
+	ol#list {
+		
+		li {
+			margin-bottom:15px;
+      
+      .picture {
+        float:left;
+        width:110px;
+        margin:0 1px 5px 0;
+        text-align:center;
+
+  			ol.icons {
+          
+  				li {
+  					margin:5px 2px;
+            display:inline;
+            float:none;
+            clear:none;
+
+  					img {
+  						margin:6px 0 0;
+  					}
+  				}
+  				li.first img { margin:0; }
+  			}
+
+  			img.pic {
+  				margin:0 auto;
+  				width:90px;
+  			}
+      }
+			
+      .info {
+        margin-left:116px;
+			  width: 575px;
+        
+        h2 {
+        }
+        
+  			.bio {
+  				font-size: 120%;
+  				
+  				p {
+  				  width: 575px;
+  				}
+  			}
+
+        .sessions {
+          margin-left: 20px;
+          margin-top:0;
+          
+          dt {
+            clear:both;
+            float:left;
+          }
+
+          dd {
+            float:left;
+            margin-left:2px;
+          }
+        }
+      }
+
+		}
+	}
+}

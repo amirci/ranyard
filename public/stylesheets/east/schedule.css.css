@@ -1,0 +1,30 @@
+/* line 5, ../../../app/assets/stylesheets/east/schedule.css.scss */
+#schedule {
+  margin: 20px;
+  margin-left: 280px;
+}
+/* line 10, ../../../app/assets/stylesheets/east/schedule.css.scss */
+#schedule table {
+  border: 2px solid green;
+}
+/* line 13, ../../../app/assets/stylesheets/east/schedule.css.scss */
+#schedule table .room {
+  width: 100px;
+}
+/* line 17, ../../../app/assets/stylesheets/east/schedule.css.scss */
+#schedule table .slot {
+  width: 80px;
+}
+/* line 21, ../../../app/assets/stylesheets/east/schedule.css.scss */
+#schedule table td {
+  padding: 5px;
+}
+/* line 25, ../../../app/assets/stylesheets/east/schedule.css.scss */
+#schedule table .event {
+  background: orange;
+}
+/* line 30, ../../../app/assets/stylesheets/east/schedule.css.scss */
+#schedule table .main_event {
+  text-align: center;
+  background: yellow;
+}

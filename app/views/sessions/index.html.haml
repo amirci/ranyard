@@ -1,0 +1,52 @@
+#content.sessions
+  = link_to 'New Session', new_session_path if current_user
+  = link_to 'Attendance',  attendance_sessions_path if current_user
+    
+  #tag-list
+    %p Click on a tag to see only those sessions with that tag.
+    %ul
+      %li.cmd-clear-filter.on See All Sessions
+      - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+        %li{ class: css_class }= tag.name
+
+  %article
+    %header 
+      .time
+        .year 2010
+        .date 16
+      %h1 Sessions
+      .comments 36
+
+
+    %p.display_options
+      %strong Detail level:
+      %a.cmd-high-detail.selected{:href=>'#'} complete
+      %a.cmd-low-detail{:href=>'#'} compact
+    
+
+    %ul#session-list.high-detail
+      - @sessions.each do |session|
+        %li{id: "session_#{session.id}", class: 'session'}
+          %h3.title= link_to session.title, session 
+
+          .speakers= speakers(session)
+          .tags= tags(session)
+          .abstract= abstract(session)
+          = schedule(session)
+
+          .planning_to_attend
+            = button_to('I plan on attending this session', action: 'attending', id: session.id)
+              
+          .attending
+            %p I plan on attending
+            = button_to('I changed my mind.', action: 'not_attending', id: session.id)
+
+          - if current_user
+            .attending_stats
+              %span.value= session.planning_to_attend
+              plan to attend 
+
+            %p.commands
+              = link_to 'Edit', edit_session_path(session) if current_user
+              = button_to("Delete Session", { :action => "destroy", :id => session.id }, {:confirm => "Are you sure?", :method => :delete}) if current_user
+

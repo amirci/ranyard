@@ -1,0 +1,204 @@
+/* line 13, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#session .box {
+  margin: 0 0 2em;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid #87a066;
+}
+/* line 19, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#session .box h3 {
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+/* line 24, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#session .box .speakers {
+  margin-bottom: 10px;
+  font-weight: bold;
+  float: left;
+}
+/* line 30, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#session .box .tags {
+  margin-bottom: 10px;
+  font-weight: bold;
+  float: right;
+}
+/* line 36, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#session .box .abstract {
+  clear: both;
+}
+/* line 40, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#session .box .schedule {
+  font-style: italic;
+  text-align: right;
+  margin-top: 20px;
+}
+
+/* line 49, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #tag-list {
+  margin-bottom: 2em;
+  line-height: 3em;
+}
+/* line 53, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #tag-list p {
+  margin: 0;
+}
+/* line 57, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #tag-list li {
+  cursor: pointer;
+  list-style-type: none;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #d8f0fc;
+  width: auto;
+  display: inline;
+  vertical-align: center;
+}
+/* line 67, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #tag-list li:hover {
+  background-color: #cccccc;
+}
+/* line 71, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #tag-list li.on,
+#sessions #tag-list li.on:hover {
+  background-color: #b9dc8c;
+  border: 1px solid #87a066;
+}
+/* line 76, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #tag-list li.css1 {
+  font-size: 1.0em;
+}
+/* line 77, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #tag-list li.css2 {
+  font-size: 1.2em;
+}
+/* line 78, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #tag-list li.css3 {
+  font-size: 1.5em;
+}
+/* line 79, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #tag-list li.css4 {
+  font-size: 2.0em;
+}
+/* line 82, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list {
+  margin: 0;
+  padding: 0;
+}
+/* line 88, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list.planning_to_attend li .planning_to_attend {
+  display: block;
+}
+/* line 91, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list.planning_to_attend li .planning_to_attend input[type="submit"] {
+  margin: 0.85em 0 0.85em auto;
+}
+/* line 97, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list.planning_to_attend li.attending .planning_to_attend {
+  display: none;
+}
+/* line 100, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list.planning_to_attend li.attending .attending {
+  display: block;
+}
+/* line 102, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list.planning_to_attend li.attending .attending p {
+  display: inline-block;
+  background-color: #b9dc8c;
+  border: 1px solid #87a066;
+  margin: 1em 0 1em auto;
+  padding: 2px 5px;
+  text-align: center;
+  width: 108px;
+}
+/* line 115, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li {
+  list-style-type: none;
+  margin: 0 0 2em;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid #87a066;
+}
+/* line 122, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li h3 {
+  margin-top: 0;
+  margin-bottom: 2px;
+  color: #004373;
+}
+/* line 128, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li .speakers {
+  margin-bottom: 10px;
+  font-weight: bold;
+  float: left;
+}
+/* line 134, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li .tags {
+  margin-bottom: 10px;
+  font-weight: bold;
+  float: right;
+}
+/* line 140, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li .abstract {
+  clear: both;
+}
+/* line 144, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li .schedule {
+  font-style: italic;
+  text-align: right;
+  margin-top: 20px;
+}
+/* line 150, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li .planning_to_attend, #sessions #session-list > li .attending {
+  display: none;
+}
+/* line 154, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li .planning_to_attend, #sessions #session-list > li .attending {
+  margin: 1em 0;
+  text-align: right;
+}
+/* line 158, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li .planning_to_attend div, #sessions #session-list > li .planning_to_attend form, #sessions #session-list > li .attending div, #sessions #session-list > li .attending form {
+  display: inline;
+}
+/* line 163, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li .attending_stats {
+  background-color: #b9dc8c;
+  border: 1px solid #87a066;
+  margin: 1em 0 1em auto;
+  padding: 2px 5px;
+  text-align: center;
+  width: 100px;
+}
+/* line 172, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li dt {
+  margin: 1em 0 0;
+}
+/* line 176, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li dd {
+  display: inline;
+  margin: 2px 0 0;
+}
+/* line 181, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li ul.tags {
+  margin: 0;
+  padding: 0;
+}
+/* line 185, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li ul.tags li {
+  list-style-type: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+/* line 192, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li ul.tags li + li {
+  margin-left: -4px;
+}
+/* line 195, ../../../app/assets/stylesheets/east/sessions.css.scss */
+#sessions #session-list > li ul.tags li + li:before {
+  content: ', ';
+}
+
+/* line 202, ../../../app/assets/stylesheets/east/sessions.css.scss */
+.hide {
+  display: none;
+}

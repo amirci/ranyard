@@ -1,0 +1,26 @@
+#content.speakers
+  %p= link_to("New Speaker", new_speaker_path) if current_user
+
+  %article
+    %header 
+      .time
+        .year 2010
+        .date 16
+      %h1 Speakers
+      .comments 36
+
+    %p.display_options
+      %strong Detail level:
+      %a.cmd-high-detail.selected{:href=>'#'} complete
+      %a.cmd-low-detail{:href=>'#'} compact
+
+    %ol#list
+
+      - sort_by_last_name(@speakers).each do |speaker|
+        %li{id: "speaker_#{speaker.id}", class: 'speaker'}
+          .info
+            = name(speaker)
+            = actions(speaker)
+            = bio(speaker)
+            = sessions(speaker)
+

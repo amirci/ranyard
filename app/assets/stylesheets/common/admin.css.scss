@@ -1,0 +1,82 @@
+.admin {
+
+	h1 { 
+		color:white;
+		padding: 10px;
+		margin: 0px;
+		margin-bottom:10px;
+
+		background-image: linear-gradient(bottom, rgb(144,149,168) 19%, rgb(53,56,71) 60%);
+		background-image: -o-linear-gradient(bottom, rgb(144,149,168) 19%, rgb(53,56,71) 60%);
+		background-image: -moz-linear-gradient(bottom, rgb(144,149,168) 19%, rgb(53,56,71) 60%);
+		background-image: -webkit-linear-gradient(bottom, rgb(144,149,168) 19%, rgb(53,56,71) 60%);
+		background-image: -ms-linear-gradient(bottom, rgb(144,149,168) 19%, rgb(53,56,71) 60%);
+
+		background-image: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(0.19, rgb(144,149,168)),
+			color-stop(0.6, rgb(53,56,71))
+		);		
+	}
+
+	.inputs {
+
+		background:#ececec;
+		padding: 10px;
+
+		.input {
+			margin:0px 0 10px 0;
+			padding:0px;
+
+			label {
+				margin-right:5px;
+				line-height:10px;
+			}
+
+			select {
+				width:auto;
+			}
+
+			textarea {
+				width:750px;
+				height:200px;
+			}
+
+			input, textarea {  
+			    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+			    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+			    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+		    }
+		
+			input {
+				height:auto;
+				margin-right:5px;
+			}
+
+			input[type="checkbox"], input[type="radio"] {
+				margin:0;
+			}
+		}
+
+		.input.check_boxes {
+			
+			span {
+				width:auto;
+				display:inline-block;
+			}
+		}		
+	}
+
+	.actions {
+		margin:0;
+		padding:5px;
+		background:#a8a8a8;
+
+		input {
+			font-weight:bold;
+			padding: 5px 10px;
+		}
+	}		
+}

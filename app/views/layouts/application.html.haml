@@ -1,0 +1,46 @@
+%html
+  %head
+    %meta{'http-equiv'=>"Content-Type", :content=>"text/html; charset=UTF-8"}
+    %title= "#{@conference.name}"
+    %meta{:name=>"title", :content=>"#{@conference.name}"}
+    %meta{:name=>"keywords", :content=>""}
+    %meta{:name=>"description", :content=>""}
+    %meta{:name=>"copyright", :content=> "#{@conference.name}"}
+    %meta{:name=>"revisit-after", :content=>"15 days"}
+
+    %meta{:name=>"robots", :content=>"all"}
+    = stylesheet_link_tag "application", :debug => Rails.env.development?
+    = csrf_meta_tags
+    = yield :dochead
+
+  %body
+    %header
+      %hgroup
+        %h1= "#{@conference.name} conference"
+        %h2= format_days(@conference)
+        %h3= "#{@conference.venue} - #{@conference.city}"
+        
+      %nav#global
+        %ul
+          %li= link_to 'Home', :root
+          %li= link_to 'About', '/about'
+          %li= link_to 'Speakers', speakers_path
+          %li= link_to 'Sessions', sessions_path
+          %li= link_to 'Schedule', schedule_path
+          %li= link_to 'Registration', '/registration'
+          %li= link_to 'Mobile', '/develop'
+          %li= link_to 'Log Out', log_out_path if current_user
+
+    .clear_fix
+      = yield
+
+    %footer.clear_fix
+      %section
+        %p 
+          = link_to 'Privacy Policy', '/privacy'
+          |
+          = link_to 'Terms And Conditions', '/toc'
+
+    = javascript_include_tag "application", :debug => Rails.env.development?
+    = yield :doctail 
+

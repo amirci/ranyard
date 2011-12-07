@@ -1,0 +1,11 @@
+= simple_form_for @session do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :title
+    = f.input :abstract
+    = f.association :speakers, :as => :check_boxes, :collection => active_conference.speakers.order(:name)
+    = f.input :tag_list, :label => "Tags", :hint => "Separate multiple tags with commas"
+
+  .actions
+    = f.submit 'Save Session'

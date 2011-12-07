@@ -1,0 +1,20 @@
+= simple_form_for @conference do |f|
+  = f.error_notification
+
+  .inputs
+    .field
+      = f.input :name
+    .field
+      = f.input :start, :value => format_start(@conference.start)
+    .field
+      = f.input :finish, :value => format_finish(@conference.finish)
+    .field
+      = f.input :active, :value => format_active(@conference.active)
+    .field
+      = f.input :subdomain
+    .field
+      = f.input :venue
+    .field
+      = f.input :city
+  .actions
+    = f.submit 'Save Conference'

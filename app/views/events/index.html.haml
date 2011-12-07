@@ -1,0 +1,35 @@
+#events
+
+  %h1 Events Administration
+
+  %img.hr{:src=>image_path('pix.gif')}
+
+  -active_conference.days.each do |day|
+    - events = @events.select { |e| e.start.to_date == day }
+  
+    %table.day
+      %header
+        %span= day.strftime('%b %d %Y')
+        = ":"
+        = link_to "Add Event", new_event_path(date: day)
+        
+      %thead
+        %th Slot
+        %th Session
+        %th Room
+        %th Main
+        %th Custom
+        %th
+        %th
+
+      - events.each do |e|
+        %tr.event
+          %td= format_slot(e)
+          %td= e.session.title if e.session
+          %td= e.room.name if e.room
+          %td= e.main ? 'Y' : 'N'
+          %td= e.custom
+          %td= link_to 'Edit', edit_event_path(e)
+          %td= button_to("Delete Event", { :action => "destroy", :id => e.id }, {:confirm => "Are you sure?", :method => :delete})
+
+    

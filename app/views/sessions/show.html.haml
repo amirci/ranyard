@@ -1,0 +1,13 @@
+#session.IntContentBox
+  .IntContentBoxInfo
+
+    %p#notice= notice
+    
+    .box
+      %h3= @session.title
+      .speakers= speakers
+      .tags= tags
+      .abstract= abstract
+      .schedule= schedule
+    
+    = session_buttons

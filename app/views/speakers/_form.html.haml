@@ -1,0 +1,23 @@
+= simple_form_for @speaker do |f|
+  = f.error_notification
+
+  .inputs
+    .field
+      = f.input :name
+    .field
+      = f.input :email
+    .field
+      = f.input :location
+    .field
+      = f.input :twitter
+    .field
+      = f.input :blog
+    .field
+      = f.input :website
+    .field
+      = f.input :bio
+    .field
+      = f.input :picture
+  
+  .actions
+    = f.submit 'Save Speaker'

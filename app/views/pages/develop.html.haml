@@ -1,0 +1,50 @@
+#content.develop
+  %article
+    %header 
+      .time
+        .year 2010
+        .date 16
+      %h1 Documentation for Developers
+      .comments 36
+
+    %p Most pages on this site expose read-only data feeds that you can use to build your own third-party applications.
+
+    %p Currently, these feeds are available in JSON and JSONP.
+
+    %h2 What is JSON?
+
+    %p
+      %a{:href=>"http://www.json.org/"} JSON
+      stands for JavaScript Object Notation and is a lightweight data-interchange format.
+
+    %h3 What Feeds are Available?
+
+    %p To access the following feeds, you must make a request that accepts 'application/JSON' as a response.
+
+    %p 
+      Also u can use the extension ".json" in the request to indicate the format desired. 
+      Please look at the links below (you may want to install a JSON display plugin).
+
+    %dl#feeds-list
+      %dt= "Who is speaking at #{@conference.name}?"
+      %dd= link_to "/speakers.json", speakers_path + '.json' 
+      %dt What sessions are available?
+      %dd= link_to "/sessions.json", sessions_path + '.json' 
+      %dt What are the sponsors of the conference?
+      %dd= link_to "/sponsors.json", sponsors_path + '.json' 
+      %dt What is the schedule of the conference?
+      %dd= link_to "/schedule.json", schedule_path + '.json' 
+      %dt When was the last time the conference data was modified?
+      %dd= link_to "/last_update.json", last_update_path + '.json' 
+    
+
+    %h3 Examples
+
+    %p Don't know how to start? Check the examples!
+
+    %dl#examples-list
+      %dd= link_to "C#, ASP.NET MVC", "https://github.com/amirci/prdc_api_demo", target: "_blank"
+      %dd= link_to "Ruby", "https://gist.github.com/974365", target: "_blank"
+      %dd= link_to "Sencha Touch 2", "https://github.com/MonsterCoder/PrdcSencha", target: "_blank"
+      %dd= link_to "Windows Phone", "https://github.com/MisterJames/Open-Conference", target: "_blank"
+

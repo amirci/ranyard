@@ -1,0 +1,19 @@
+= simple_form_for @event do |f|
+  = f.error_notification
+
+  - session_id = @event.session ? @event.session.id : nil
+  
+  .inputs
+    = f.input :start, :value => @event.start
+    = f.input :finish, :value => @event.finish
+    = f.association :room, :value => @event.room, prompt: "No Room"
+    = f.input :main, :value => @event.main
+    = f.input :custom, :value => @event.custom
+    %div{class: 'input text optional'}
+      = f.label :session, class: 'text'
+      = select("session", "id", 
+                @sessions.map { |p| [p.title, p.id] }, 
+                { include_blank: true, selected: session_id})
+
+  .actions
+    = f.button :submit

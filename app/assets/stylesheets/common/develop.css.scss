@@ -1,0 +1,23 @@
+// Place all the styles related to the accounts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#develop {
+  // Add the accounts class to your body tag
+  // Then, place scoped styles here.
+
+	ul {
+		margin-left: 20px;
+		
+		li {
+			font-size:14px;
+			margin-bottom:10px;
+
+			a {
+				img {
+					margin-right:10px;
+				}
+			}
+		}
+	}
+}

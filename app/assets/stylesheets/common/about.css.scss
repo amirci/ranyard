@@ -1,0 +1,24 @@
+// Place all the styles related to the accounts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#about {
+  // Add the accounts class to your body tag
+  // Then, place scoped styles here.
+
+	ul {
+		margin-left: 40px;
+	}
+	
+	#venue {
+		margin-bottom:20px;
+	}
+	
+	.address {
+		margin-bottom:10 px;
+	
+		p { 
+			margin: 0px;
+		}
+	}	
+}
