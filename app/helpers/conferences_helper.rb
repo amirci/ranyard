@@ -5,7 +5,7 @@ module ConferencesHelper
     head = conf.days[0..-2].map { |d| d.day }.join(', ')
     month = conf.days.first.strftime("%B")
     year = conf.days.first.year
-    "#{month} #{head} & #{conf.days.last.day}, #{year}"
+    "#{month} #{head} & #{conf.days.last.day} #{year}"
   end
   
   def format_start(date) 

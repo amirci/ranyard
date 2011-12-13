@@ -24,12 +24,12 @@ describe ConferencesHelper do
 
   describe ".format_days" do
     
-    let(:conf) { double(Conference) }
+    let(:conf) { double(Conference, start: Date.parse('Nov 21 2011'), finish: Date.parse('Nov 23 2011')) }
     let(:days) { (21..23).map { |d| DateTime.parse("Nov #{d}, 2011") } }
     
     before { conf.stub(:days).and_return(days) }
     
-    it { helper.format_days(conf).should == 'November 21, 22 & 23, 2011' }
+    it { helper.format_days(conf).should == 'November 21, 22 & 23 2011' }
   end
   
 end

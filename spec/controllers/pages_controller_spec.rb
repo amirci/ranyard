@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe PagesController do
 
-  static_pages = %w(about toc privacy registration develop)
+  static_pages = %w(about registration develop)
   supported_subdomains = [nil, 'west']
 
   supported_subdomains.each do |subdomain|
