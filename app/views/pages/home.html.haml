@@ -1,10 +1,23 @@
-#content
-  %article
-    %h1= "Welcome to the home of #{@conference.name} conference!"
+.hero-unit
+  %h1
+    Welcome to the 
+    %em= @conference.name
+    conference!
     
-%aside
-  %section
-    %h1 Latest news
+  %p
+    This is a very cool conference to attend!!!
+    
+.row
+  .span6
+    %h2 Latest news
     %ul
       %li New sponsorship announced!
       %li Best speaker line-up ever!
+
+  .span5
+    %h2 About our sponsors
+    %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+
+  .span5
+    %h2 New venue!
+    %p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
