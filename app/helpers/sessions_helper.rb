@@ -1,6 +1,12 @@
 module SessionsHelper
   include ActsAsTaggableOn::TagsHelper
-  
+
+  def favourite(session)
+    button_to('Star it!', action: 'attending', id: session.id)
+    # %p I plan on attending
+    # = button_to('I changed my mind.', action: 'not_attending', id: session.id)
+  end
+
   def speakers(session = nil)
     session ||= @session
     names = session.speakers.collect { |sp| sp.name }.join(', ')
@@ -9,7 +15,9 @@ module SessionsHelper
   
   def tags(session = nil)
     session ||= @session
-    tagged_as = session.tags.collect { |t| t.name.upcase }.join(', ')
+    tagged_as = session.tags.map do |t|
+      link_to(t.name.upcase, '#', class: 'tags')
+    end.reduce(:+)
     tagged_as == "" ? 'TBD' : tagged_as
   end
   

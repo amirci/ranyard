@@ -1,11 +1,7 @@
 #content.develop
   %article
     %header 
-      .time
-        .year 2010
-        .date 16
       %h1 Documentation for Developers
-      .comments 36
 
     %p Most pages on this site expose read-only data feeds that you can use to build your own third-party applications.
 
@@ -37,8 +33,10 @@
       %dt When was the last time the conference data was modified?
       %dd= link_to "/last_update.json", last_update_path + '.json' 
     
-
-    %h3 Examples
+%aside
+  %section
+    %header 
+      %h1 Examples
 
     %p Don't know how to start? Check the examples!
 

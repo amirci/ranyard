@@ -5,36 +5,6 @@ end
 Given /^I have the following speakers for "(.+)":$/ do |conf, table|
   table.hashes.each { |attrib| Speaker.create(attrib) }
 end
- 
-Then /^I should see speaker info:$/ do |table|
-  table.hashes.each do |row|
-    within("#speaker_#{row['id']}") do
-      Then %Q{I should see "#{row['name']}"}
-      Then %Q{I should see "#{row['bio']}"}
-      Then %Q{I should see "#{row['location']}"}
-      page.should have_xpath(".//img[@src='/assets/#{row['picture']}']")
-    end
-  end
-end
-
-Then /^I should see the speaker icons:$/ do |table|
-  table.hashes.each do |row|
-    id = row['id']
-    within("#speaker_#{id}") do
-      page.should have_xpath(".//a[@href='mailto:#{row['email']}']") 
-      %w{website blog twitter}.each { |field| page.should have_xpath(".//a[@href='#{row[field]}']") }
-    end
-  end
-end
-
-Then /^I should see the speaker sessions:$/ do |table|
-  table.hashes.each do |row|
-    within("#speaker_#{row['id']}") do
-      Then %Q{I should see "#{row['title']}"}
-      Then %Q{I should see "#{row['day']}, #{row['time']}, room #{row['room']}"}
-    end
-  end
-end
 
 Given /^I have a speaker that has no picture$/ do
   Fabricate(:speaker, picture: nil)

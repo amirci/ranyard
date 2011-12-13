@@ -1,6 +1,10 @@
 
 /* RESET */
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, font, img, ins, kbd, q, samp, small, strong, sub, sup, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, header, nav, article, aside, footer, hgroup, section {
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+font, img, ins, kbd, q, samp, small, strong, sub, sup, var, dl, dt, dd, ol, 
+ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, 
+tr, th, td, header, nav, article, aside, footer, hgroup, section {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -32,19 +36,8 @@ header, nav, article, aside, footer, hgroup, section { display: block }
 * html .clearfix             { zoom: 1 } /* IE6 */
 *:first-child+html .clearfix { zoom: 1 } /* IE7 */
 
-/* @FONT-FACE */
-@font-face {
-	font-family: 'Colaborate-RegularRegular';
-	src: url('fonts/ColabReg-webfont.eot');
-	src: local('☺'), url('fonts/ColabReg-webfont.woff') format('woff'), url('fonts/ColabReg-webfont.ttf') format('truetype'), url('fonts/ColabReg-webfont.svg#webfont') format('svg');
-}
-
-@font-face {
-	font-family: 'HighlandGothicLightFLFRegular';
-	src: url('fonts/HighlandGothicLightFLF-webfont.eot');
-	src: local('☺'), url('fonts/HighlandGothicLightFLF-webfont.woff') format('woff'), url('fonts/HighlandGothicLightFLF-webfont.ttf') format('truetype'), url('fonts/HighlandGothicLightFLF-webfont.svg#webfont') format('svg');
-}
-
+/* fonts */
+@import url(http://fonts.googleapis.com/css?family=Original+Surfer);
 
 /* TYPOGRAPHY */
 html {
@@ -70,7 +63,9 @@ a { color: #940033 }
 a:hover { border-bottom: 1px solid #940033 }
 a:active { border-bottom: 2px solid #940033 }
 
-h1 { font: 24px/36px Colaborate-RegularRegular, "Trebuchet MS", Arial, Helvetica, sans-serif }
+h1 { 
+	font: 24px/36px Colaborate-RegularRegular, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
 
 .newLine { display: block }
 
@@ -78,9 +73,13 @@ h1 { font: 24px/36px Colaborate-RegularRegular, "Trebuchet MS", Arial, Helvetica
 /* HEADER */
 header {
 }
-hgroup { margin: 20px 0 40px }
+hgroup { 
+	margin: 20px 0 40px;
+	text-align:center;
+}
 hgroup h1 {
-	font: 40px/54px HighlandGothicLightFLFRegular, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-family: 'Original Surfer', cursive;
+	font-size:50px;
 	color: #970000;
 	text-shadow: -1px -1px 0 #650000, 0 0 10px rgba(255,255,255,0.7);
 }
@@ -215,7 +214,10 @@ article header {
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #0081ac),color-stop(1, #005b79));
 }
 
-article header h1 { line-height: 40px }
+article header h1 { 
+	line-height: 40px; 
+	margin-left:20px;
+}
 
 .time {
 	float: left;

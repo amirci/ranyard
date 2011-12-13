@@ -1,12 +1,8 @@
 #content.schedule  
   %article
     %header 
-      .time
       %h1 Schedule
-      .comments
 
-    %h2= link_to("Edit Schedule", events_path) if current_user
-    
     - i = 0
     - @events_by_day.each_pair do |date, events|
       - unless events.empty?
@@ -16,3 +12,12 @@
             = schedule_headers(@rooms)
           %tbody
             = schedule_events(events, @rooms)
+            
+- if current_user
+  %aside
+    %section
+      %header
+        %h1 Actions
+      = link_to("Edit Schedule", events_path) 
+
+    
