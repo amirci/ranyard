@@ -1,27 +1,27 @@
-#content.speakers
-  - sort_by_last_name(@speakers).each do |speaker|
-    %article{id: "speaker_#{speaker.id}"}
-      %header 
-        %h1= speaker.name
-      %p.speaker
-        = picture(speaker)
-        .info
-          = actions(speaker)
-          = bio(speaker)
-      %footer= sessions(speaker)
+#speakers.content
+  .page-header 
+    %h1 Speakers
+  .row
+    .span10
+      - sort_by_last_name(@speakers).each do |speaker|
+        .speaker{id: "speaker_#{speaker.id}"}
+          %h2= speaker.name
+          = picture(speaker)
+          .info
+            = actions(speaker)
+            = bio(speaker)
+          %footer= sessions(speaker)
 
-%aside
-  %section
-    %header
+    .span4
       %h1 Detail level
-    %p
-      %a.cmd-high-detail.selected{:href=>'#'} complete
-      |
-      %a.cmd-low-detail{:href=>'#'} compact
+      %p
+        %a.cmd-high-detail.selected{:href=>'#'} complete
+        |
+        %a.cmd-low-detail{:href=>'#'} compact
 
-  -if current_user
-    %section
-      %header
-        %h1 Actions
-      %p= link_to("New Speaker", new_speaker_path) 
+      -if current_user
+        %section
+          %header
+            %h1 Actions
+          %p= link_to("New Speaker", new_speaker_path) 
 

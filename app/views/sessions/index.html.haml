@@ -1,44 +1,48 @@
-#content.sessions
-  - @sessions.each do |session|
-    %article{id: "session_#{session.id}", class: 'session'}
-      %header 
-        %h1.title= session.title
-        .comment= favourite(session)
-      %p
-        .abstract= abstract(session)
-        = schedule(session)
+#sessions.content
+  .page-header 
+    %h1 sessions
+  .row
+    .span10
+      - @sessions.each do |session|
+        .session{id: "session_#{session.id}"}
+          .header
+            %h2.title= session.title
+            = favourite(session)
+          %p
+            .abstract= abstract(session)
+            = schedule(session)
 
-      %footer
-        %em Speaker:
-        %strong= speakers(session)
-        %span.newLine
-          %em Tags:
-          = tags(session)
+          %footer
+            %em Speaker:
+            %strong= speakers(session)
+            %p
+              %em Tags:
+              = tags(session)
 
+          - if current_user
+            .attending_stats
+              %span.value= session.planning_to_attend
+              plan to attend 
+
+            %p.commands
+              = link_to 'Edit', edit_session_path(session) if current_user
+              = button_to("Delete Session", { :action => "destroy", :id => session.id }, {:confirm => "Are you sure?", :method => :delete}) if current_user
+              
+    .span4
       - if current_user
-        .attending_stats
-          %span.value= session.planning_to_attend
-          plan to attend 
+        %section
+          = link_to 'New Session', new_session_path
+          = link_to 'Attendance',  attendance_sessions_path
 
-        %p.commands
-          = link_to 'Edit', edit_session_path(session) if current_user
-          = button_to("Delete Session", { :action => "destroy", :id => session.id }, {:confirm => "Are you sure?", :method => :delete}) if current_user
+      %section.display_options
+        %h2 Detail level
+        %a.cmd-high-detail.selected{:href=>'#'} complete
+        %a.cmd-low-detail{:href=>'#'} compact
 
-%aside
-  - if current_user
-    %section
-      = link_to 'New Session', new_session_path
-      = link_to 'Attendance',  attendance_sessions_path
-
-  %section.display_options
-    %h1 Detail level
-    %a.cmd-high-detail.selected{:href=>'#'} complete
-    %a.cmd-low-detail{:href=>'#'} compact
-
-  %section#tag-list
-    %h1 Filter by tag
-    %ul
-      %li.cmd-clear-filter.on See All Sessions
-      - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
-        %li{ class: css_class }= tag.name
+      %section#tag-list
+        %h2 Filter by tag
+        %ul
+          %li.cmd-clear-filter.on See All Sessions
+          - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+            %li{ class: css_class }= tag.name
 

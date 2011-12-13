@@ -32,12 +32,9 @@
     .container
       = yield
 
-    %footer
-      %section
-        %p 
-          = link_to 'Privacy Policy', '/privacy'
-          |
-          = link_to 'Terms And Conditions', '/toc'
+      %footer
+        %p= link_to 'Privacy Policy', '/privacy'
+        %p= link_to 'Terms And Conditions', '/toc'
 
     = javascript_include_tag "application", :debug => Rails.env.development?
     = yield :doctail 

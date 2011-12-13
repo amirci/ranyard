@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#content.speakers {
+#speakers {
 
 	.speaker {
+		background:#eeeeee;
+		padding:5px;
+		margin-bottom:10px;
 		img {
 			float:left;
 			width:100px;
