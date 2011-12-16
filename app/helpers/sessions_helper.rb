@@ -2,7 +2,7 @@ module SessionsHelper
   include ActsAsTaggableOn::TagsHelper
 
   def favourite(session)
-    button_to('Star it!', action: 'attending', id: session.id)
+    button_to('Star it!', {action: 'attending', id: session.id}, class: 'btn')
     # %p I plan on attending
     # = button_to('I changed my mind.', action: 'not_attending', id: session.id)
   end

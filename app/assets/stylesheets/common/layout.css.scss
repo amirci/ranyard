@@ -1,3 +1,6 @@
+$dark_olive: #87A066;
+$blue: #004373;
+
 body {
 
 }
@@ -24,7 +27,7 @@ body {
 	}
 	
 	.page-detail {
-		border:1px solid green;
+		border:1px solid $dark_olive;
 		padding:5px;
 	}
 }
@@ -32,7 +35,7 @@ body {
 .boxy {
 
 	background:#eeeeee;
-	border: 1px solid #ddd;
+	border: 1px solid $blue;
 	padding:0px;
 	margin-bottom:10px;
 
@@ -40,7 +43,7 @@ body {
 		border-bottom:1px solid #ddd;
 		margin-bottom:10px;
 		padding:5px 10px;
-        background-color: #87A066; //lighten(#62c462, 30%);
+        background-color: lighten($dark_olive, 30%);
 
 		h2 {
 			display:inline;
@@ -50,6 +53,7 @@ body {
 	.detail {
 		padding:0px 5px;
 		margin:0px;
+		min-height:100px;
 	}
 	
 	footer {
