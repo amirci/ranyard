@@ -8,6 +8,58 @@ $olive: #B9DC8C;
 $olive_dark: #87A066;
 $blue: #004373;
 
+body.sessions {
+	
+	background-color:#EEEEEE;
+
+	#sessions {
+
+		.star {
+			margin-top:5px;
+		}
+		
+		.row {
+			padding: 0 20px;
+		}
+		
+		.tag_filter {
+		  #tag-list {
+			ul {
+				margin:0px;
+			}	
+		    li {
+		      cursor: pointer;
+		      list-style-type:none;
+		      padding:5px;
+		      width:auto;
+		      vertical-align:center;
+			  text-align:center;
+		    }
+
+		    li:hover {
+		      background-color: $gray;
+		    }
+
+		    li.on,
+		    li.on:hover {
+		      background-color:$olive;
+		      border:1px solid $olive_dark;
+		    }
+
+		    li.css1 {font-size:1.0em; }
+		    li.css2 {font-size:1.2em; }
+		    li.css3 {font-size:1.5em; }
+		    li.css4 {font-size:2.0em; }
+		  }
+		}
+		
+		.tags {
+			padding:5px;
+		}
+	}
+	
+}
+
 #session {
 	
 	.box {
@@ -45,198 +97,6 @@ $blue: #004373;
 	}
 }
 
-#sessions {
-  #tag-list {	
-    margin-bottom:2em;
-    line-height:3em;
-
-    p {
-      margin:0;
-    }
-
-    li {
-      cursor: pointer;
-      list-style-type:none;
-      margin:5px;
-      padding:5px;
-      line-height:2em;
-      width:auto;
-      display:inline;
-      vertical-align:center;
-    }
-
-    li:hover {
-      background-color: $gray;
-    }
-
-    li.on,
-    li.on:hover {
-      background-color:$olive;
-      border:1px solid $olive_dark;
-    }
-
-    li.css1 {font-size:1.0em; }
-    li.css2 {font-size:1.2em; }
-    li.css3 {font-size:1.5em; }
-    li.css4 {font-size:2.0em; }
-  }
-
-	p.display_options {
-		font-size:100%;
-		
-		a.selected {
-			color:inherit;
-			text-decoration:none;
-			font-weight:bold;
-		}
-	}
-
-  #session-list {
-    margin:0;
-    padding:0;
-  }
-
-  #session-list.high-detail.planning_to_attend {
-    input,
-    input:hover {
-      color:#333;
-      border-color:#999;
-      padding:2px 8px;
-    }
-
-    li .planning_to_attend {
-      display:block;
-
-      input[type="submit"] {
-        margin: 0.85em 0 0.85em auto;
-      }
-    }
-
-    li.attending {
-      .planning_to_attend { 
-        display:none;
-      }
-      .attending { 
-        display:block;
-        p {
-          display: inline-block;
-          background-color:$olive;
-          border:1px solid $olive_dark;
-          margin: 1em 0 1em auto;
-          padding:2px 5px;
-          text-align:center;
-          width: 108px;
-        }
-      }
-    }
-  }
-
-  // common to low and high detail views
-  #session-list > li {
-    list-style-type:none;
-    margin:0 0 2em;
-    padding:5px;
-    background-color:white;
-    border:1px solid $olive_dark;
-      
-    h3 {
-      margin-top:0;
-      margin-bottom:2px;
-	    color:$blue;
-    }
-  }
-
-  #session-list.high-detail > li {
-
-    .speakers {
-      margin-bottom:10px;
-      font-weight:bold;
-      float:left;
-    }
-    
-    .tags {
-      margin-bottom:10px;
-      font-weight:bold;
-      float:right;
-    }
-    
-    .abstract {
-      clear:both;
-
-		  ul {
-		  	padding-left:30px;
-		  }
-    }
-
-	  .schedule {
-      font-style:italic;
-      text-align:right;
-      margin-top:20px;
-    }
-	
-    .planning_to_attend,.attending {
-      display:none;
-    }
-
-    .planning_to_attend, .attending {
-      margin:1em 0;
-      text-align:right;
-
-      div, form {
-        display:inline;
-      }
-    }
-
-    .attending_stats {
-      background-color:$olive;
-      border:1px solid $olive_dark;
-      margin: 1em 0 1em auto;
-      padding:2px 5px;
-      text-align:center;
-      width: 100px;
-    }
-
-    ul.tags {
-      margin:0;
-      padding:0;
-
-      li {
-        list-style-type:none;
-        display:inline;
-        margin:0;
-        padding:0;
-      }
-
-      li+li {
-        margin-left: -4px;
-      }
-      li+li:before {
-        content: ', ';
-      }
-    }
-  }
-
-  #session-list.low-detail > li {
-
-    div {
-      display:none;
-    }
-
-    li .planning_to_attend {
-      display: none;
-    }
-
-    li.attending {
-      display: none;
-      .attending { 
-        display: none;
-        p {
-          display: none;
-        }
-      }
-    }
-  }
-}
 
 .hide {display:none;}
 

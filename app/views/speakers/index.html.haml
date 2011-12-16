@@ -1,27 +1,24 @@
 #speakers.content
   .page-header 
     %h1 Speakers
-  .row
-    .span10
-      - sort_by_last_name(@speakers).each do |speaker|
-        .speaker{id: "speaker_#{speaker.id}"}
+    .pull-right.page-detail
+      %span Detail:
+      %a.cmd-high-detail.selected{:href=>'#'} complete
+      |
+      %a.cmd-low-detail{:href=>'#'} compact
+      -if current_user
+        %p= link_to("New Speaker", new_speaker_path) 
+        
+  .fill.speakers
+    - sort_by_last_name(@speakers).each do |speaker|
+      .speaker.boxy{id: "speaker_#{speaker.id}"}
+        .header
           %h2= speaker.name
+        .detail
           = picture(speaker)
           .info
             = actions(speaker)
             = bio(speaker)
-          %footer= sessions(speaker)
+        %footer= sessions(speaker)
 
-    .span4
-      %h1 Detail level
-      %p
-        %a.cmd-high-detail.selected{:href=>'#'} complete
-        |
-        %a.cmd-low-detail{:href=>'#'} compact
-
-      -if current_user
-        %section
-          %header
-            %h1 Actions
-          %p= link_to("New Speaker", new_speaker_path) 
 

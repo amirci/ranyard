@@ -1,21 +1,30 @@
 #sessions.content
   .page-header 
-    %h1 sessions
+    %h1 Sessions
+    .pull-right.page-detail
+      %span Detail:
+      %a.cmd-high-detail.selected{:href=>'#'} complete
+      |
+      %a.cmd-low-detail{:href=>'#'} compact
+      - if current_user
+        = link_to 'New Session', new_session_path
+        = link_to 'Attendance',  attendance_sessions_path
+
   .row
-    .span10
+    .span14
       - @sessions.each do |session|
-        .session{id: "session_#{session.id}"}
+        .session.boxy{id: "session_#{session.id}"}
           .header
-            %h2.title= session.title
-            = favourite(session)
-          %p
+            %h2= session.title
+            .pull-right.star= favourite(session)
+          .detail
             .abstract= abstract(session)
             = schedule(session)
 
           %footer
             %em Speaker:
             %strong= speakers(session)
-            %p
+            .pull-right
               %em Tags:
               = tags(session)
 
@@ -28,21 +37,11 @@
               = link_to 'Edit', edit_session_path(session) if current_user
               = button_to("Delete Session", { :action => "destroy", :id => session.id }, {:confirm => "Are you sure?", :method => :delete}) if current_user
               
-    .span4
-      - if current_user
-        %section
-          = link_to 'New Session', new_session_path
-          = link_to 'Attendance',  attendance_sessions_path
-
-      %section.display_options
-        %h2 Detail level
-        %a.cmd-high-detail.selected{:href=>'#'} complete
-        %a.cmd-low-detail{:href=>'#'} compact
-
-      %section#tag-list
-        %h2 Filter by tag
+    .span2.tag_filter
+      #tag-list
+        %h2 Filter
         %ul
-          %li.cmd-clear-filter.on See All Sessions
+          %li.cmd-clear-filter.on All
           - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
             %li{ class: css_class }= tag.name
 

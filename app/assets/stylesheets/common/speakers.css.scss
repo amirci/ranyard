@@ -2,19 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#speakers {
+body.speakers {
+	background-color:#EEEEEE;
 
-	.row {
-		padding: 0 20px;
-	}
-	
-	.speaker {
-		background:#eeeeee;
-		padding:5px;
-		margin-bottom:10px;
-		img {
-			float:left;
-			width:100px;
+	#speakers {
+
+		.row {
+			padding: 0 20px;
+		}
+
+		.speakers {
+		
+			margin: 10px;
+			border:1px solid white;
+			
+			.speaker {
+				
+				.detail {
+					img {
+						float:left;
+						width:100px;
+					}
+				}
+			}
 		}
 	}
+
 }
+

@@ -1,8 +1,13 @@
 #content.schedule  
-  %article
-    %header 
-      %h1 Schedule
+  .page-header 
+    %h1 Schedule
+    - if current_user
+      .pull-right.actions
+      %span Actions:
+      = link_to("Edit Schedule", events_path) 
 
+
+  .fill
     - i = 0
     - @events_by_day.each_pair do |date, events|
       - unless events.empty?
@@ -13,11 +18,4 @@
           %tbody
             = schedule_events(events, @rooms)
             
-- if current_user
-  %aside
-    %section
-      %header
-        %h1 Actions
-      = link_to("Edit Schedule", events_path) 
-
     

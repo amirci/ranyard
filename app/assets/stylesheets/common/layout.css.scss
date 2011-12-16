@@ -1,8 +1,9 @@
 body {
-	background-color:#EEEEEE;
+
 }
 
 .container {
+
 }
 
 .content {
@@ -17,4 +18,41 @@ body {
     background-color: #F5F5F5;
     padding: 20px 20px 10px;
 	margin-top: 20px;
+	
+	h1 {
+		display:inline;
+	}
+	
+	.page-detail {
+		border:1px solid green;
+		padding:5px;
+	}
+}
+
+.boxy {
+
+	background:#eeeeee;
+	border: 1px solid #ddd;
+	padding:0px;
+	margin-bottom:10px;
+
+	.header {
+		border-bottom:1px solid #ddd;
+		margin-bottom:10px;
+		padding:5px 10px;
+        background-color: #87A066; //lighten(#62c462, 30%);
+
+		h2 {
+			display:inline;
+		}
+	}
+	
+	.detail {
+		padding:0px 5px;
+		margin:0px;
+	}
+	
+	footer {
+		padding:0px 10px 5px 10px;
+	}
 }
