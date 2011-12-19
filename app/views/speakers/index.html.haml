@@ -1,4 +1,4 @@
-#speakers.content
+#speakers.content.high-detail
   .page-header 
     %h1 Speakers
     .pull-right.page-detail
@@ -11,7 +11,7 @@
         
   .fill.speakers
     - sort_by_last_name(@speakers).each do |speaker|
-      .speaker.boxy{id: "speaker_#{speaker.id}"}
+      .speaker{id: "speaker_#{speaker.id}"}
         .header
           %h2= speaker.name
         .detail

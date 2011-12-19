@@ -2,31 +2,70 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "layout";
+
 body.speakers {
 	background-color:#EEEEEE;
-
+	
 	#speakers {
+
+		padding-bottom:20px;
 
 		.row {
 			padding: 0 20px;
 		}
-
+		
 		.speakers {
 		
 			margin: 10px;
 			border:1px solid white;
-			
-			.speaker {
-				
-				.detail {
-					img {
-						float:left;
-						width:100px;
-					}
-				}
+
+			img {
+				width:100px;
 			}
 		}
 	}
+	
+	#speakers.high-detail {
+		
+		.speaker {
+			@extend .boxy;
+		}
+
+		img {
+			float:left;
+		}
+	}
+	
+	#speakers.low-detail {
+
+		.speakers {
+			display:table;
+			border-collapse:collapse;
+		}
+		
+		.speaker {
+			@extend .boxy;
+			text-align:center;
+		  	display:table-cell;
+	      	width:140px;
+			border-spacing:10px;
+			padding:5px;
+			h2 {
+				font-size:100%;
+			}
+		}
+
+		img {
+			clear:both;
+		}
+
+		footer, .info {
+			display:none;
+		}
+	}
+
+	
 
 }
 

@@ -1,12 +1,13 @@
-$dark_olive: #87A066;
-$blue: #004373;
+@import "colors";
 
 body {
 
 }
 
 .container {
-
+	footer {
+		clear:both;
+	}
 }
 
 .content {
@@ -15,6 +16,7 @@ body {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     margin: 0 -20px;
     padding-top: 20px;
+
 }
 
 .page-header {
@@ -29,6 +31,27 @@ body {
 	.page-detail {
 		border:1px solid $dark_olive;
 		padding:5px;
+
+		a {
+			padding: 1px 3px 2px;
+			font-size: 9.75px;
+			font-weight: bold;
+			text-transform: uppercase;
+			white-space: nowrap;
+			background-color: white;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			text-shadow: none;		
+			background:white;
+			background:#eee;
+			color:$blue;
+		}
+		
+		.selected {
+			color:white;
+			background:$blue;
+		}
 	}
 }
 

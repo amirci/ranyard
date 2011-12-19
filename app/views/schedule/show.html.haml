@@ -1,13 +1,12 @@
-#content.schedule  
+#schedule.content
   .page-header 
     %h1 Schedule
-    - if current_user
-      .pull-right.actions
-      %span Actions:
-      = link_to("Edit Schedule", events_path) 
+    -if current_user
+      .pull-right
+        = link_to("Edit Schedule", events_path) 
 
 
-  .fill
+  #calendars.fill
     - i = 0
     - @events_by_day.each_pair do |date, events|
       - unless events.empty?
