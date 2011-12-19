@@ -8,7 +8,7 @@ $ ->
   clear_filter_trigger = $('#tag-list li.cmd-clear-filter')
   all_tags = $('#tag-list li').not('.cmd-clear-filter')
   enabled_class = 'on'
-  session_item_selector = '#session-list > li'
+  session_item_selector = '.session'
   all_items = $(session_item_selector)
 
   tag_clicked = (ev) ->

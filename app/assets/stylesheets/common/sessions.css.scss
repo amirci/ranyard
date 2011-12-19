@@ -2,13 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "layout";
+@import "colors";
+
 $background: #D8F0FC;
 $gray: #ccc;
-$olive: #B9DC8C;
-$olive_dark: #87A066;
-$blue: #004373;
-
-@import "layout";
 
 body.sessions {
 	
@@ -40,6 +38,9 @@ body.sessions {
 		      width:auto;
 		      vertical-align:center;
 			  text-align:center;
+				font-weight: bold;
+				text-transform: uppercase;
+				color:$blue;
 		    }
 
 		    li:hover {
@@ -49,7 +50,8 @@ body.sessions {
 		    li.on,
 		    li.on:hover {
 		      background-color:$olive;
-		      border:1px solid $olive_dark;
+		      border:1px solid $dark_olive;
+			  color:white;
 		    }
 
 		    li.css1 {font-size:1.0em; }
@@ -62,6 +64,8 @@ body.sessions {
 		.tags {
 			padding:5px;
 			color:$blue;
+			font-weight: bold;
+			text-transform: uppercase;
 		}
 	}
 
@@ -70,6 +74,9 @@ body.sessions {
 
 	#sessions.low-detail {
 		.session {
+			.header {
+				margin-bottom:5px;
+			}
 			.detail {
 				display:none;
 			}
@@ -83,7 +90,7 @@ body.sessions {
 	    margin:0 0 2em;
 	    padding:5px;
 	    background-color:white;
-  		border:1px solid $olive_dark;
+  		border:1px solid $dark_olive;
 
 	    h3 {
 	      margin-top:0;
