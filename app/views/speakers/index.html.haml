@@ -2,10 +2,7 @@
   .page-header 
     %h1 Speakers
     .pull-right.page-detail
-      %span Detail:
-      %a.cmd-high-detail.selected{:href=>'#'} complete
-      |
-      %a.cmd-low-detail{:href=>'#'} compact
+      = content_detail_switch
       -if current_user
         %p= link_to("New Speaker", new_speaker_path) 
         

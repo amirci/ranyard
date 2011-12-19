@@ -26,14 +26,17 @@
             %li= link_to 'Sessions', sessions_path
             %li= link_to 'Schedule', schedule_path
             %li= link_to 'Mobile', '/develop'
-            %li= link_to 'Log Out', log_out_path if current_user
+            - if current_user
+              %li= link_to 'Log Out', log_out_path 
 
     .container
       = yield
 
       %footer
-        %p= link_to 'Privacy Policy', '/privacy'
-        %p= link_to 'Terms And Conditions', '/toc'
+        %p
+          = link_to 'Privacy Policy', '/privacy'
+          |
+          = link_to 'Terms And Conditions', '/toc'
 
     = javascript_include_tag "application", :debug => Rails.env.development?
     = yield :doctail 

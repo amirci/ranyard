@@ -1,11 +1,8 @@
-#sessions.content
+#sessions.content.high-detail
   .page-header 
     %h1 Sessions
     .pull-right.page-detail
-      %span Detail:
-      %a.cmd-high-detail.selected{:href=>'#'} complete
-      |
-      %a.cmd-low-detail{:href=>'#'} compact
+      = content_detail_switch
       - if current_user
         = link_to 'New Session', new_session_path
         = link_to 'Attendance',  attendance_sessions_path
@@ -13,7 +10,7 @@
   .row
     .span14
       - @sessions.each do |session|
-        .session.boxy{id: "session_#{session.id}"}
+        .session{id: "session_#{session.id}"}
           .header
             %h2= session.title
             .pull-right.star= favourite(session)

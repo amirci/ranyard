@@ -2,8 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 #
-#
-#
+
 $ = jQuery
 $ ->
   clear_filter_trigger = $('#tag-list li.cmd-clear-filter')
@@ -58,19 +57,19 @@ $ ->
 
 $ ->
   selectedClass = 'selected'
-  cmdDetailHigh = $('#sessions p.display_options .cmd-high-detail')
-  cmdDetailLow = $('#sessions p.display_options .cmd-low-detail')
+  cmdDetailHigh = $('#sessions .cmd-high-detail')
+  cmdDetailLow = $('#sessions .cmd-low-detail')
 
   setDetail = (fromClass, toClass) ->
     return (ev) -> 
-      $('#session-list').removeClass(fromClass).addClass(toClass)
-                    .parent()
-                    .find('p.display_options .'+selectedClass).removeClass(selectedClass)
+      $('#sessions').removeClass(fromClass).addClass(toClass)
+                    .find('.page-detail .' + selectedClass).removeClass(selectedClass)
       $(this).addClass(selectedClass);
       return false
 
   cmdDetailHigh.click(setDetail('low-detail','high-detail'))
   cmdDetailLow.click(setDetail('high-detail','low-detail'))
+
 
 $ -> 
   split_char = '_'

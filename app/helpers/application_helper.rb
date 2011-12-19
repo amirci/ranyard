@@ -18,6 +18,13 @@ module ApplicationHelper
       image_tag 'wpg/wordmark.jpg'
     end
   end
+  
+  def content_detail_switch
+    link_to('complete', '#', class: 'cmd-high-detail selected') +
+    ' | ' +
+    link_to('compact', '#', class: 'cmd-low-detail') 
+  end
+  
   private
     def event_format(e)
       "#{e.start.strftime('%a, %H:%M')}, room #{e.room.name}"

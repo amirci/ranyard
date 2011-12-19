@@ -1,5 +1,7 @@
 @import "colors";
 
+$background-header: #F5F5F5;
+
 body {
 
 }
@@ -20,7 +22,7 @@ body {
 }
 
 .page-header {
-    background-color: #F5F5F5;
+    background-color: $background-header;
     padding: 20px 20px 10px;
 	margin-top: 20px;
 	
@@ -43,8 +45,7 @@ body {
 			-moz-border-radius: 3px;
 			border-radius: 3px;
 			text-shadow: none;		
-			background:white;
-			background:#eee;
+			background:$background-header;
 			color:$blue;
 		}
 		

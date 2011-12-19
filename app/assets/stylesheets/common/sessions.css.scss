@@ -8,6 +8,8 @@ $olive: #B9DC8C;
 $olive_dark: #87A066;
 $blue: #004373;
 
+@import "layout";
+
 body.sessions {
 	
 	background-color:#EEEEEE;
@@ -22,6 +24,10 @@ body.sessions {
 			padding: 0 20px;
 		}
 		
+		.session {
+			@extend .boxy;
+		}
+
 		.tag_filter {
 		  #tag-list {
 			ul {
@@ -58,7 +64,17 @@ body.sessions {
 			color:$blue;
 		}
 	}
-	
+
+	#sessions.high-detail {
+	}
+
+	#sessions.low-detail {
+		.session {
+			.detail {
+				display:none;
+			}
+		}
+	}
 }
 
 #session {
