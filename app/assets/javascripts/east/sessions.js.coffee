@@ -73,11 +73,8 @@ $ ->
 
 $ -> 
   split_char = '_'
-  sessionItems = $('#session-list > li');
-  $('#session-list').addClass('planning_to_attend');
-
-  attendingForms = sessionItems.find('.planning_to_attend form');
-  notAttendingForms = sessionItems.find('.attending form');
+  sessionItems = $('.session');
+  attendingForms = sessionItems.find('.star form');
   
   attendingCookie = $.cookie('attending') || ''
   sessions_attending = if attendingCookie == '' then [] else attendingCookie.split(split_char) 
@@ -85,20 +82,28 @@ $ ->
   get_selector_for_session = (i) =>
 
   mark_attending = (n) =>
-    $('#session_'+n).addClass('attending')
+    update_attending_form_action(n, false)
+    $("#session_#{n} .star .btn").addClass('starred').val('Favourite')
 
   mark_not_attending = (n) =>
-    $('#session_'+n).removeClass('attending')
+    update_attending_form_action(n, true)
+    $("#session_#{n} .star .btn").removeClass('starred').val('Star It!')
+
+  update_attending_form_action = (n, should_attend) =>
+    form = $("#session_#{n} .star form")
+    href = form.attr('action').split('/')
+    href.pop()
+    href.push(if should_attend then 'attending' else 'not_attending')
+    form.attr('action', href.join('/'))
 
   update_cookie = ->
     $.cookie('attending', sessions_attending.join(split_char))
     
-  attending_submitting = (ev) =>
-    btn = $(ev.target).find("input[type='submit']").attr('disabled', 'disabled')
+  update_favourite_status = (ev) =>
+    make_regular = $(ev.target).find(".btn").hasClass('starred')
     form = $(ev.target).closest('form')
-    action = form.attr('action')
-    $.post(action, form.serialize(), attending_submitted, 'json')
-    form.closest('li').find("input[type='submit']").not(btn).removeAttr('disabled');
+    submit_fn = if make_regular then not_attending_submitted else attending_submitted
+    $.post(form.attr('action'), form.serialize(), submit_fn, 'json')
     return false
 
   attending_submitted = (data) =>
@@ -106,20 +111,15 @@ $ ->
     sessions_attending.push(data.id)
     update_cookie()
 
-  not_attending_submitting = (ev) =>
-    btn = $(ev.target).find("input[type='submit']").attr('disabled', 'disabled')
-    form = btn.closest('form')
-    action = form.attr('action')
-    $.post(action, form.serialize(), not_attending_submitted, 'json')
-    form.closest('li').find("input[type='submit']").not(btn).removeAttr('disabled');
-    return false
-    
   not_attending_submitted = (data) =>
     mark_not_attending(data.id)
-    sessions_attending.delete(data.id)
+    index = sessions_attending.indexOf(data.id.toString())
+    sessions_attending.splice(index, 1)
     update_cookie()
 
+  # Using the favourite sessions, update the markup to reflect the status
   $.each(sessions_attending, (i,n) -> mark_attending(n))
-  attendingForms.submit(attending_submitting)
-  notAttendingForms.submit(not_attending_submitting)
+
+  # When the form submits, update favourite status for the session
+  attendingForms.submit(update_favourite_status)
 

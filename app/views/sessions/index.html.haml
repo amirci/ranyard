@@ -13,6 +13,7 @@
         .session{id: "session_#{session.id}"}
           .header
             %h2= session.title
+            = attending_stats_if_admin(session)
             .pull-right.star= favourite(session)
           .detail
             .abstract= abstract(session)
@@ -25,14 +26,9 @@
               %em Tags:
               = tags(session)
 
-          - if current_user
-            .attending_stats
-              %span.value= session.planning_to_attend
-              plan to attend 
-
-            %p.commands
-              = link_to 'Edit', edit_session_path(session) if current_user
-              = button_to("Delete Session", { :action => "destroy", :id => session.id }, {:confirm => "Are you sure?", :method => :delete}) if current_user
+              %p.commands
+                = link_to 'Edit', edit_session_path(session) if current_user
+                = button_to("Delete Session", { :action => "destroy", :id => session.id }, {:confirm => "Are you sure?", :method => :delete}) if current_user
               
     .span2.tag_filter
       #tag-list

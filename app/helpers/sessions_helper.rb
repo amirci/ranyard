@@ -1,10 +1,13 @@
 module SessionsHelper
   include ActsAsTaggableOn::TagsHelper
 
-  def favourite(session)
-    button_to('Star it!', {action: 'attending', id: session.id}, class: 'btn')
-    # %p I plan on attending
-    # = button_to('I changed my mind.', action: 'not_attending', id: session.id)
+  def attending_stats_if_admin(session)
+    content_tag(:span, session.planning_to_attend, class: 'attending_stats') if current_user
+  end
+  
+  def favourite(session, options = {})
+    classes = 'btn ' + (options[:class] || '') 
+    button_to('Star It!', {action: 'attending', id: session.id}, class: classes)
   end
 
   def speakers(session = nil)
