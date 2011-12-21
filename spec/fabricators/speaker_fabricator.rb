@@ -1,5 +1,5 @@
 Fabricator(:speaker) do
-  bio      { Faker::Lorem.paragraphs(3)  }
+  bio      { Faker::Lorem.paragraphs(6).join("\r\n\r\n")  }
   blog     { Faker::Internet.domain_name }
   email    { Faker::Internet.email       }
   location { Faker::Address.city         }
