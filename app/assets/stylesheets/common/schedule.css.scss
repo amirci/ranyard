@@ -8,10 +8,30 @@ body.schedule {
 
 	background-color: $background_page;
 
-	#schedule {
+	#calendars {
 
+		margin: 0px 20px 20px 20px;
+		
+		.tabs {
+			margin-bottom:5px;
+			
+			.active {
+				a {
+					color:white;
+					background-color:$dark_olive;
+				}
+			}
+		}
+		
 		table {
-			margin:20px;
+			width:auto;
+			td {
+			  width:300px;
+			  &:first-child {
+				width:auto;
+				min-width:100px;
+			  }
+			}
 		}
 	}
 	

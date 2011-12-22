@@ -8,14 +8,19 @@
 
   #calendars.fill
     - i = 0
-    - @events_by_day.each_pair do |date, events|
-      %ul.tabs
-        %li= link_to("Day #{i += 1} - #{date.strftime('%b %d %Y')}", '#')
+    %ul.tabs{'data-tabs' => 'tabs'}
+      - @events_by_day.each_pair do |date, events|
+        %li{ class: i == 0 ? 'active' : '' }
+          = link_to("Day #{i += 1} - #{date.strftime('%b %d')}", "#schedule_#{i}")
         
-    - i = 0
-    - @events_by_day.each_pair do |date, events|
-      - unless events.empty?
-        %table.zebra-striped{id: "schedule_#{i}"}
-          %thead= schedule_headers(@rooms)
-          %tbody= schedule_events(events, @rooms)
+    .tab-content
+      - i = 0
+      - @events_by_day.each_pair do |date, events|
+        - unless events.empty?
+          %table{id: "schedule_#{i += 1}", class: 'bordered-table zebra-striped tab-pane' + (i == 1 ? ' active' : '')}
+            %thead= schedule_headers(@rooms)
+            %tbody= schedule_events(events, @rooms)
             
+
+- content_for :doctail do
+  = javascript_include_tag "bootstrap/bootstrap-tabs", :debug => Rails.env.development?

@@ -10,9 +10,9 @@ module ScheduleHelper
   end
 
   def format_slot(slot)
-    content_tag(:div, slot.start.strftime('%I:%M')) +
-    content_tag(:div, 'to') +
-    content_tag(:div, slot.finish.strftime('%I:%M'))
+    slot.start.strftime('%I:%M') +
+    ' to ' +
+    slot.finish.strftime('%I:%M')
   end
 
   def schedule_headers(rooms)
