@@ -19,3 +19,5 @@
         %footer= sessions(speaker)
 
 
+- content_for :doctail do
+  = javascript_include_tag "default/speakers", :debug => Rails.env.development?

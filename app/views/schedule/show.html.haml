@@ -9,12 +9,13 @@
   #calendars.fill
     - i = 0
     - @events_by_day.each_pair do |date, events|
+      %ul.tabs
+        %li= link_to("Day #{i += 1} - #{date.strftime('%b %d %Y')}", '#')
+        
+    - i = 0
+    - @events_by_day.each_pair do |date, events|
       - unless events.empty?
-        %table#calendar
-          %header= "Day #{i + 1} - #{date.strftime('%b %d %Y')}"
-          %thead
-            = schedule_headers(@rooms)
-          %tbody
-            = schedule_events(events, @rooms)
+        %table.zebra-striped{id: "schedule_#{i}"}
+          %thead= schedule_headers(@rooms)
+          %tbody= schedule_events(events, @rooms)
             
-    

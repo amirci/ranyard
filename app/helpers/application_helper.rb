@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+  def body_style
+    page_style = controller_name == 'pages' ? " #{params[:id]}" : ''
+    controller_name + page_style
+  end
+  
   def markdown_parse(str)
     bc = BlueCloth.new(str)
     bc.to_html

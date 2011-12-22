@@ -2,22 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#develop {
-  // Add the accounts class to your body tag
-  // Then, place scoped styles here.
+@import "colors";
 
-	ul {
-		margin-left: 20px;
-		
-		li {
-			font-size:14px;
-			margin-bottom:10px;
+body.pages.develop {
 
-			a {
-				img {
-					margin-right:10px;
-				}
-			}
-		}
+	background-color: $background_page;
+
+ 	#documentation {
+		padding:20px;
 	}
 }

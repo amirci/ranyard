@@ -1,3 +1,4 @@
+
 #sessions.content.high-detail
   .page-header 
     %h1 Sessions
@@ -38,3 +39,5 @@
           - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
             %li{ class: css_class }= tag.name
 
+- content_for :doctail do
+  = javascript_include_tag "default/sessions", :debug => Rails.env.development?

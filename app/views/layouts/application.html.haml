@@ -1,11 +1,11 @@
 %html
   %head
     %meta{'http-equiv'=>"Content-Type", :content=>"text/html; charset=UTF-8"}
-    %title= "#{@conference.name}"
-    %meta{:name=>"title", :content=>"#{@conference.name}"}
+    %title= "#{@conference.name} conference"
+    %meta{:name=>"title", :content=>"#{@conference.name} conference"}
     %meta{:name=>"keywords", :content=>""}
     %meta{:name=>"description", :content=>""}
-    %meta{:name=>"copyright", :content=> "#{@conference.name}"}
+    %meta{:name=>"copyright", :content=> "#{@conference.name} conference"}
     %meta{:name=>"revisit-after", :content=>"15 days"}
 
     %meta{:name=>"robots", :content=>"all"}
@@ -13,7 +13,7 @@
     = csrf_meta_tags
     = yield :dochead
 
-  %body{class: controller_name}
+  %body{class: body_style}
     .topbar
       .fill
         .container
@@ -21,7 +21,6 @@
         
           %ul.nav
             %li= link_to 'Home', :root
-            %li= link_to 'About', '/about'
             %li= link_to 'Speakers', speakers_path
             %li= link_to 'Sessions', sessions_path
             %li= link_to 'Schedule', schedule_path

@@ -47,10 +47,11 @@ module SpeakersHelper
   
   def sessions(speaker)
     return if speaker.sessions.empty?
-    content_tag(:dl, nil, class: 'sessions') do
-      speaker.sessions.collect do |s| 
-        content_tag(:dt, "Session:") +
-        content_tag(:dd, link_to(session_schedule(s), s))
+    content_tag(:div, nil, class: 'sessions') do
+      content_tag(:span, "Sessions: ") +
+      speaker.sessions.map do |s| 
+        link_to(session_schedule(s), s) +
+        (s == speaker.sessions.last ? "" : " | ")
       end.reduce(:+)
     end
   end

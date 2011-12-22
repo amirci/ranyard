@@ -1,7 +1,9 @@
-#content.develop
-  %article
-    %header 
-      %h1 Documentation for Developers
+#develop.content
+  .page-header 
+    %h1 API Development
+
+  #documentation.fill
+    %h1 Documentation for Developers
 
     %p Most pages on this site expose read-only data feeds that you can use to build your own third-party applications.
 
@@ -32,11 +34,8 @@
       %dd= link_to "/schedule.json", schedule_path + '.json' 
       %dt When was the last time the conference data was modified?
       %dd= link_to "/last_update.json", last_update_path + '.json' 
-    
-%aside
-  %section
-    %header 
-      %h1 Examples
+  
+    %h1 Examples
 
     %p Don't know how to start? Check the examples!
 

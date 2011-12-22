@@ -8,4 +8,3 @@
 //= require ./jquery.color.js
 //= require ./jquery.cookie.js
 //= require ./jquery.hint.js
-//= require_tree ./east
