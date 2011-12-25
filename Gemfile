@@ -28,6 +28,9 @@ gem 'capistrano'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+# To fabricate examples
+gem 'fabrication'
+
 group :production do
   gem 'pg'
   gem 'therubyracer-heroku', '0.8.1.pre3'
@@ -40,7 +43,6 @@ group :development, :test do
   gem 'capybara'
   gem 'rack-test', :git => "https://github.com/hassox/rack-test.git"
   gem 'shoulda-matchers'
-  gem 'fabrication'
   gem 'launchy'
   gem 'faker'
   gem 'spork', '> 0.9.0.rc'
