@@ -30,6 +30,7 @@ gem 'capistrano'
 
 # To fabricate examples
 gem 'fabrication'
+gem 'faker'
 
 group :production do
   gem 'pg'
@@ -44,7 +45,6 @@ group :development, :test do
   gem 'rack-test', :git => "https://github.com/hassox/rack-test.git"
   gem 'shoulda-matchers'
   gem 'launchy'
-  gem 'faker'
   gem 'spork', '> 0.9.0.rc'
   gem 'guard'
   gem 'guard-bundler'
