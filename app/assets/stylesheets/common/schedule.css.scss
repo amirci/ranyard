@@ -27,8 +27,10 @@ body.schedule {
 			width:auto;
 			td {
 			  width:300px;
+			  text-align:center;
 			  &:first-child {
 				width:auto;
+				text-align:left;
 				min-width:100px;
 			  }
 			}

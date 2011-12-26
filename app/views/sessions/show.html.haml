@@ -1,13 +1,14 @@
-#session.IntContentBox
-  .IntContentBoxInfo
-
-    %p#notice= notice
-    
-    .box
-      %h3= @session.title
-      .speakers= speakers
-      .tags= tags
-      .abstract= abstract
+#session.content
+  .page-header 
+    %h1
+      .title= @session.title
+      %span.speakers= speakers
+    .pull-right
       .schedule= schedule
-    
+      .tags= tags
+
+  .fill
+    .abstract= abstract
+
+  %footer
     = session_buttons

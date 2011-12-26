@@ -19,7 +19,7 @@ end
 
 Fabricator(:example_conference, :from => :conference) do
   subdomain { nil }
-  speakers!(count: 5)  { |conf, i| Fabricate(:speaker, conference: conf, picture: 'speaker.jpg') }
+  speakers!(count: 15)  { |conf, i| Fabricate(:speaker, conference: conf, picture: 'speaker.jpg') }
   sessions!(count: 24) { |conf, i| Fabricate(:session, conference: conf, title: "The truth ##{i} about life", speakers: [conf.speakers.sample]) }
   rooms! { |conf| %w(Olympus Hogwarts Asgard).map { |w| Fabricate(:room, name: w, conference: conf) } }
   sponsors!(count: 5)  { |conf, i| Fabricate(:sponsor, name: "Sponsor #{i}", conference: conf) }

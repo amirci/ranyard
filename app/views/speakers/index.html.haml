@@ -9,6 +9,7 @@
   .fill.speakers
     - sort_by_last_name(@speakers).each do |speaker|
       .speaker{id: "speaker_#{speaker.id}"}
+        = link_to('', '*', anchor: "speaker_#{speaker.id}")
         .header
           %h2= speaker.name
         .detail

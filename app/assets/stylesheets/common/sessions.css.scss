@@ -65,8 +65,8 @@ body.sessions {
 		  }
 		}
 		
-		.tags {
-			padding:5px;
+		.tag {
+			padding-right:5px;
 			color:$blue;
 			font-weight: bold;
 			text-transform: uppercase;
@@ -86,44 +86,47 @@ body.sessions {
 			}
 		}
 	}
-}
-
-#session {
 	
-	.box {
-	    margin:0 0 2em;
-	    padding:5px;
-	    background-color:white;
-  		border:1px solid $dark_olive;
+	#session {
 
-	    h3 {
-	      margin-top:0;
-		  margin-bottom:2px;
-	    }
+		.page-header {
+			h1 {
+				line-height:25px;
 
-		.speakers {
-		  margin-bottom:10px;
-		  font-weight:bold;
-		  float:left;
+				.speakers {
+					font-size: 70%;
+				}
+			}
 		}
-
-		.tags {
-		  margin-bottom:10px;
-		  font-weight:bold;
-		  float:right;
-		}
-
-		.abstract {
-		  clear:both;
-		}
-
 		.schedule {
-			font-style:italic;
-			text-align:right;
-			margin-top:20px;
+			margin-top:-20px;
+			margin-bottom:5px;
+		}
+		
+		.abstract {
+			padding:10px;
+		}
+		
+		
+		.tags {
+			text-align:center;
+			.tag {
+				margin-right:10px;
+				color:$blue;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+		
+		footer {
+			.btn {
+				margin-right: 10px;
+			}
+			padding-bottom:10px;
 		}
 	}
 }
+
 
 
 .hide {display:none;}

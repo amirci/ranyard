@@ -12,14 +12,16 @@ module SessionsHelper
 
   def speakers(session = nil)
     session ||= @session
-    names = session.speakers.collect { |sp| sp.name }.join(', ')
-    names.empty? ? 'TBD' : names
+    names = session.speakers.collect do |sp| 
+      link_to(sp.name, speakers_path(anchor: "speaker_#{sp.id}"))
+    end.reduce(:+)
+    names.empty? ? nil : names
   end
   
   def tags(session = nil)
     session ||= @session
     tagged_as = session.tags.map do |t|
-      link_to(t.name.upcase, '#', class: 'tags')
+      link_to(t.name.upcase, '#', class: 'tag')
     end.reduce(:+)
     tagged_as == "" ? 'TBD' : tagged_as
   end
@@ -40,16 +42,12 @@ module SessionsHelper
   def schedule(session = nil)
     session ||= @session
     return unless session.event
-    content_tag(:div, event_format(session.event), class: 'schedule')
+    link_to(event_format(session.event), schedule_path(anchor: "session_#{session.id}"))
   end
   
   private
     def back_link(session)
-      link_to('Back to sessions', sessions_path) +
-      ' | ' +
-      link_to('Back to speakers', speakers_path(anchor: "session_#{session.id}")) +
-      ' | ' +
-      link_to('Back to schedule', schedule_path(anchor: "session_#{session.id}")) 
+      link_to('Back to sessions', sessions_path, class: 'btn') 
     end
   
     def edit_link(session)

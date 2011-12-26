@@ -33,7 +33,7 @@ $ ->
     t.removeClass(enabled_class)
 
   apply_filter = (selected_tag) ->
-    found = all_items.find(".tags:contains('#{selected_tag}')")
+    found = all_items.find(".tag:contains('#{selected_tag}')")
     items_to_show = found.parents(session_item_selector)
     items_to_hide = all_items.not(items_to_show)
 

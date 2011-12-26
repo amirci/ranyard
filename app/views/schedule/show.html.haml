@@ -20,7 +20,7 @@
           %table{id: "schedule_#{i += 1}", class: 'bordered-table zebra-striped tab-pane' + (i == 1 ? ' active' : '')}
             %thead= schedule_headers(@rooms)
             %tbody= schedule_events(events, @rooms)
-            
+    %footer     
 
 - content_for :doctail do
   = javascript_include_tag "bootstrap/bootstrap-tabs", :debug => Rails.env.development?
