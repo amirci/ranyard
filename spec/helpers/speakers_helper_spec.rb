@@ -73,37 +73,22 @@ describe SpeakersHelper do
 
     context 'When speaker has sessions' do
 
-      context 'When session has no schedule' do
-        let(:expected) do
-          content_tag(:dl, nil, class: 'sessions') do
-            sess.collect { |s| content_tag(:dt, "Session:") + content_tag(:dd, link_to(s.title, s)) }.reduce(:+)
-          end
+      let(:link) { "link" }
+      
+      let(:expected) do
+        content_tag(:div, nil, class: 'sessions') do
+          content_tag(:span, "Sessions: ") + sess.map {|s| [link, " | "]}.flatten[0..-2].reduce(:+)
         end
-
-        it { should eq(expected) }
       end
 
-      context 'When session has schedule' do
-        let(:expected) do
-          content_tag(:dl, nil, class: 'sessions') do
-            sess.collect do |s| 
-              content_tag(:dt, "Session:") + 
-              content_tag(:dd, link_to("#{s.title} (#{formatted})", s)) 
-            end.reduce(:+)
-          end
-        end
+      before { self.stub!(:session_schedule).and_return("schedule") }
+      before { self.stub!(:link_to).and_return(link) }
 
-        before { sess.each { |s| s.stub(:event).and_return(event) } }
-        before { self.stub!(:event_format).with(event).and_return(formatted) }
-
-        it { should eq(expected) }
-      end
-
+      it { should eq(expected) }
     end
     
     context 'When speaker has no sessions yet' do
       before { speaker.stub(:sessions).and_return([]) }
-      
       it { should be(nil) }
     end
   end

@@ -49,10 +49,7 @@ module SpeakersHelper
     return if speaker.sessions.empty?
     content_tag(:div, nil, class: 'sessions') do
       content_tag(:span, "Sessions: ") +
-      speaker.sessions.map do |s| 
-        link_to(session_schedule(s), s) +
-        (s == speaker.sessions.last ? "" : " | ")
-      end.reduce(:+)
+      speaker.sessions.map { |s| [link_to(session_schedule(s), s), " | "] }.flatten[0..-2].reduce(:+)
     end
   end
   

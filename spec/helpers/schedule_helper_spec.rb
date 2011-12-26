@@ -50,9 +50,7 @@ describe ScheduleHelper do
   
   describe ".format_slot" do  
     let(:slot)     { slots.last }  
-    let(:expected) { content_tag(:div, slot.start.strftime('%I:%M')) +
-                     content_tag(:div, "to") +
-                     content_tag(:div, slot.finish.strftime('%I:%M')) }
+    let(:expected) { slot.start.strftime('%I:%M') + ' to ' + slot.finish.strftime('%I:%M') }
                      
     it { helper.format_slot(slot).should == expected }
   end
