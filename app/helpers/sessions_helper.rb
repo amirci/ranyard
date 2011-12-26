@@ -21,7 +21,7 @@ module SessionsHelper
   def tags(session = nil)
     session ||= @session
     tagged_as = session.tags.map do |t|
-      link_to(t.name.upcase, '#', class: 'tag')
+      link_to(t.name.upcase, sessions_path(tag: t.id), class: 'tag')
     end.reduce(:+)
     tagged_as == "" ? 'TBD' : tagged_as
   end
@@ -47,7 +47,7 @@ module SessionsHelper
   
   private
     def back_link(session)
-      link_to('Back to sessions', sessions_path, class: 'btn') 
+      link_to('Back to sessions', sessions_path(anchor: "session_#{session.id}"), class: 'btn') 
     end
   
     def edit_link(session)
