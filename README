@@ -1,8 +1,13 @@
-##Ranyard: A RoR conference site (like Lanyard but in Ruby ;)
+##Ranyard
+A RoR conference site (like Lanyard but in Ruby ;)
 
-
-##Authors: David Alpert and Amir Barylko
+##Authors
+* David Alpert - @davidalpert
+* Amir Barylko - @abarylko
 
 
 ##How to start?
-  Very easy.....
+  Just fork from github, and use the admin to populate Conferences, rooms, speakers, sessions and sponsors.
+  
+  
+Enjoy!
